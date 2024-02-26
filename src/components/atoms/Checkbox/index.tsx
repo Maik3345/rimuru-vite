@@ -1,0 +1,67 @@
+import React, { FC, createElement, useEffect, useState } from "react";
+import { CheckboxVariantType, checked, unchecked } from "./Icons";
+
+interface CheckboxProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
+  /** If it is true, variant will be primary */
+  primary?: boolean;
+  /** If it is true, variant will be secondary */
+  secondary?: boolean;
+  /** If it is true, variant will be bordered */
+  bordered?: boolean;
+  /** If it is true, variant will be unabled */
+  unabled?: boolean;
+  /** You can select directly the variant of checkbox */
+  variant?: CheckboxVariantType;
+}
+
+export const Checkbox: FC<CheckboxProps> = ({
+  primary,
+  secondary,
+  bordered,
+  disabled,
+  variant,
+  ...checkboxProps
+}) => {
+  const [checkboxIsChecked, setCheckboxIsChecked] = useState(
+    checkboxProps.checked
+  );
+
+  const calculatedVariant: CheckboxVariantType = variant
+    ? variant
+    : primary
+    ? "primary"
+    : secondary
+    ? "secondary"
+    : bordered
+    ? "bordered"
+    : disabled
+    ? "disabled"
+    : "primary";
+
+  useEffect(() => {
+    setCheckboxIsChecked(checkboxProps.checked);
+  }, [checkboxProps.checked]);
+
+  return (
+    <>
+      <input
+        style={{ display: "none" }}
+        {...checkboxProps}
+        type="checkbox"
+        name=""
+        id=""
+      />
+      <span onClick={() => setCheckboxIsChecked((curr) => !curr)}>
+        {createElement(
+          checkboxIsChecked
+            ? checked[calculatedVariant]
+            : unchecked[calculatedVariant]
+        )}
+      </span>
+    </>
+  );
+};
