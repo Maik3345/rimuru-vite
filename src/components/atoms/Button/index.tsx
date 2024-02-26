@@ -12,7 +12,7 @@ export const Button = () => {
       onClick={handleClick}
       style={{
         padding: "25px",
-        color: "var(--lit-styleguide-text-color, #000)",
+        color: "var(--lit-styleguide-text-color, #fff)",
         borderRadius: "5px",
         border: "none",
         backgroundColor: "var(--lit-styleguide-primary-color, #000)",

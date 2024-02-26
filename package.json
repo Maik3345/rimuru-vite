@@ -1,13 +1,14 @@
 {
   "name": "rimuru-vite",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "npx husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -18,6 +19,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.2",
     "@types/node": "^20.11.20",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
@@ -27,6 +30,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "husky": "^9.0.11",
     "node": "^21.6.2",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
@@ -34,13 +38,13 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/lib-componentes-piscilago-react.umd.cjs",
-  "module": "./dist/lib-componentes-piscilago-react.es.js",
+  "main": "./dist/rimuru-vite.umd.cjs",
+  "module": "./dist/rimuru-vite.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/lib-componentes-piscilago-react.es.js",
-      "require": "./dist/lib-componentes-piscilago-react.umd.cjs"
+      "import": "./dist/rimuru-vite.es.js",
+      "require": "./dist/rimuru-vite.umd.cjs"
     }
   }
 }
