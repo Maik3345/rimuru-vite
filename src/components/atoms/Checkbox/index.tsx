@@ -1,5 +1,5 @@
 import React, { FC, createElement, useEffect, useState } from "react";
-import { CheckboxVariantType, checked, unchecked } from "./Icons";
+import { CheckboxVariantType, checked, unchecked } from "./icons";
 
 interface CheckboxProps
   extends React.DetailedHTMLProps<
@@ -42,20 +42,29 @@ export const Checkbox: FC<CheckboxProps> = ({
     ? "disabled"
     : "primary";
 
+  const itIsDisabled = calculatedVariant === "disabled";
+
   useEffect(() => {
+    if (itIsDisabled) return;
+
     setCheckboxIsChecked(checkboxProps.checked);
   }, [checkboxProps.checked]);
 
   return (
     <>
       <input
-        style={{ display: "none" }}
+        style={{
+          width: 0,
+          height: 0,
+          position: "absolute",
+        }}
         {...checkboxProps}
         type="checkbox"
-        name=""
-        id=""
       />
-      <span onClick={() => setCheckboxIsChecked((curr) => !curr)}>
+      <span
+        onClick={() => !itIsDisabled && setCheckboxIsChecked((curr) => !curr)}
+        {...{ variant }}
+      >
         {createElement(
           checkboxIsChecked
             ? checked[calculatedVariant]

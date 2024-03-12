@@ -3,6 +3,7 @@ import { FC } from "react";
 export const UncheckedPrimary = () => {
   return (
     <svg
+      {...{ "data-testid": "UncheckedPrimary" }}
       width="16"
       height="16"
       viewBox="0 0 16 16"
@@ -18,6 +19,7 @@ export const UncheckedPrimary = () => {
 export const UncheckedSecondary = () => {
   return (
     <svg
+      {...{ "data-testid": "UncheckedSecondary" }}
       width="16"
       height="16"
       viewBox="0 0 16 16"
@@ -33,6 +35,7 @@ export const UncheckedSecondary = () => {
 export const UncheckedBordered = () => {
   return (
     <svg
+      {...{ "data-testid": "UncheckedBordered" }}
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -98,6 +101,7 @@ export const UncheckedBordered = () => {
 export const UncheckedDisabled = () => {
   return (
     <svg
+      {...{ "data-testid": "UncheckedDisabled" }}
       width="16"
       height="16"
       viewBox="0 0 16 16"
@@ -113,6 +117,7 @@ export const UncheckedDisabled = () => {
 export const CheckedPrimary = () => {
   return (
     <svg
+      {...{ "data-testid": "CheckedPrimary" }}
       width="16"
       height="16"
       viewBox="0 0 16 16"
@@ -135,6 +140,7 @@ export const CheckedPrimary = () => {
 export const CheckedSecondary = () => {
   return (
     <svg
+      {...{ "data-testid": "CheckedSecondary" }}
       width="16"
       height="16"
       viewBox="0 0 16 16"
@@ -157,6 +163,7 @@ export const CheckedSecondary = () => {
 export const CheckedBordered = () => {
   return (
     <svg
+      {...{ "data-testid": "CheckedBordered" }}
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -229,6 +236,7 @@ export const CheckedBordered = () => {
 export const CheckedDisabled = () => {
   return (
     <svg
+      {...{ "data-testid": "CheckedDisabled" }}
       width="16"
       height="16"
       viewBox="0 0 16 16"
