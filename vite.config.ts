@@ -1,3 +1,7 @@
+/// <reference types="vitest" />
+/* errors by not import testing functions do not appear */
+/// <reference types="Vite/client" />
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "path";
@@ -41,5 +45,11 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"),
     },
+  },
+  test: {
+    environment: "jsdom",
+    globals: true, // the testing functions do not have to be imported
+    setupFiles: "./src/test/setup.ts",
+    css: true,
   },
 });
