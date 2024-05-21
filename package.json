@@ -1,7 +1,7 @@
 {
   "name": "rimuru-vite",
   "private": false,
-  "version": "0.0.3",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +11,8 @@
     "prepare": "npx husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "prepublish": "npm run build",
+    "postrelease": "npm run prepublish && npm publish",
     "test": "vitest",
     "test:ui": "vitest --ui"
   },

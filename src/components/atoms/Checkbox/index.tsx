@@ -1,7 +1,7 @@
 import React, { FC, createElement, useEffect, useState } from "react";
 import { CheckboxVariantType, checked, unchecked } from "./icons";
 
-interface CheckboxProps
+export interface CheckboxProps
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
