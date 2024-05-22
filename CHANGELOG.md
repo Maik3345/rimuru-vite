@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0](https://github.com/Maik3345/rimuru-vite/compare/v1.1.0...v1.2.0) - (2024-05-22)
+
+### Features
+
+* main: **exports**: update the `index.ts` and `index.tsx` exports to use the components ([37676aee](https://github.com/Maik3345/rimuru-vite/commit/37676aee8b017d8750634d16bd8da5ca4d84d327))
+
+
 ## [1.1.0](https://github.com/Maik3345/rimuru-vite/releases/tag/v1.1.0) - (2024-05-21)
 
 ### Features
